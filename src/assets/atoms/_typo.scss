@@ -1,0 +1,41 @@
+.a-typo {
+	font: 400 14px/25px $font-primary;
+	color: $cl-grey3;
+	&.is-primary {
+		font: 400 33px/43px $font-primary;
+	}
+	&.is-secondary {
+		font: 400 20px/28px $font-primary;
+	}
+	&.is-tertiary {
+		font: 400 13px/19px $font-primary;
+	}
+	&.is-bold {
+		font-weight: bold;
+	}
+	&.is-italic {
+		font-style: italic;
+	}
+	&.is-underline {
+		text-decoration: underline;
+	}
+	&.is-strike {
+		text-decoration: line-through;
+	}
+	&.is-list {
+		padding: 10px 20px 20px 13px;
+		li {
+			padding: 2px 0;
+			font-family: $font-primary;
+			font-size: 13px;
+		}
+	}
+	&.is-inline {
+		display: inline-block;
+	}
+	&[disabled], &.is-disabled {
+		opacity: .6;
+		pointer-events: none;
+		cursor: default;
+	}
+}

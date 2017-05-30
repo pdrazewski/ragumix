@@ -1,0 +1,31 @@
+.b-mainWrapper {
+	.b-mainWrapper_content {
+		padding: 20px;
+		margin: 0 auto;
+		clear: both;
+		overflow: hidden;
+		max-width: 1350px;
+	}
+	&_primary {
+		float: left;
+		width: 45%;
+	}
+	&_secondary {
+		float: right;
+		width: 49%;
+		box-sizing: border-box;
+		padding: 5px;
+		border: 1px solid #eee;
+		min-height: 500px;
+		overflow: hidden;
+		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		background: url('../static/bg.jpg') repeat;
+		div {
+			transition: all .2s ease;
+  			position: relative;
+			margin: 0 auto;
+		}
+	}
+}
