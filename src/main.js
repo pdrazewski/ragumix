@@ -4,9 +4,7 @@ import VueRouter from 'vue-router'
 // routing
 import index from './views/v-index.vue'
 import gallery from './views/v-gallery.vue'
-
 Vue.use(VueRouter)
-
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: index },
@@ -14,6 +12,7 @@ const router = new VueRouter({
 	]
 })
 
-new Vue({
-	router
-}).$mount('#app')
+// vuex store
+import store from './store/store.js'
+
+new Vue({router, store}).$mount('#app') 

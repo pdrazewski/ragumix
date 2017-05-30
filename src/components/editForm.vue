@@ -1,5 +1,4 @@
 <template>
-	<div>
 	<form class="a-form" @submit.prevent="save">
 		<div class="a-form_row">
 			<label class="a-form_label">Name:</label>
@@ -33,9 +32,6 @@
 			<button type="submit" class="a-btn is-primary">Save</button>
 		</div>
 	</form>
-	<div :style="rectStyle">
-	</div>
-	</div>
 </template>
 
 
@@ -59,14 +55,30 @@
 				saved: false
 			}
 		},
+		watch: {
+		    width: function () {
+		      this.$store.dispatch('editorSetStyle', "width", this.width)
+		    },
+		    height: function () {
+		      this.$store.dispatch('editorSetStyle', "height", this.height)
+		    },
+		    radius: function () {
+		      this.$store.dispatch('editorSetStyle', "border-radius", this.radius)
+		    },
+		    bgcolor: function () {
+		      this.$store.dispatch('editorSetStyle', "bgcolor", this.bgcolor)
+		    }
+		},
 		computed: {
 			rectStyle: function () {
-				return {
+				var style = {
 					width: this.width + "px",
 					height: this.height + "px",
 					background: this.bgcolor,
 					"border-radius": this.radius + "px"
 				}
+				
+				return style
 			}
 		},
 		mounted(){
