@@ -3,6 +3,7 @@
 		<template slot>
 			<button @click="filterByNameAsc">sortuje A-Z</button>
 			<button @click="filterByNameDesc">sortuje Z-A</button>
+			<button @click="filterByWidth">sortuje width</button>
 			<transition-group name="flip-list" tag="ul">
 			<li v-bind:key="item" v-for="(item, index) in items" style="float: left; padding: 40px;border: 1px solid #eee">
 				<div :style="item.style">
@@ -42,6 +43,9 @@
 			},
 			filterByNameDesc() {
 				this.items = _.sortBy(this.items, [function(o) { return o.name; }]).reverse();
+			},
+			filterByWidth() {
+				this.items = _.sortBy(this.items, [function(o) { return o.style.width; }]);
 			}
 		}
 	}
