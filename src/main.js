@@ -12,7 +12,4 @@ const router = new VueRouter({
 	]
 })
 
-// vuex store
-import store from './store/store.js'
-
-new Vue({router, store}).$mount('#app') 
+new Vue({router}).$mount('#app') 

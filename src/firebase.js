@@ -42,9 +42,9 @@ const helpers = {
 		updates['/' + setup.key] = setup.data
 		return app.database().ref('rects').update(updates, function(error) {
 			if (error) {
-				data[key] = 'saving...with error'
+				data[key] = error
 			} else {
-				data[key] = 'saving...with success'
+				data[key] = 'Saved successfully'
 			}
 		})
 	},

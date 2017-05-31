@@ -16,14 +16,10 @@
 </template>
 
 <script>
-	/* eslint-disable no-unused-vars, camelcase, func-call-spacing, no-unexpected-multiline */
-	/* eslint quotes: [0, { "avoidEscape": true }] */
 	export default {
 		name: 'header',
 		data() {
 			return {
-				token: '',
-				user: false,
 				menu: [{
 					path: '',
 					name: 'Add new rect'
