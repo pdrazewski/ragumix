@@ -20,12 +20,17 @@ import visualEditor from '../../../src/components/visualEditor.vue'
 * test picker on drag method?
 */
 
+/**
+* visualEditor should have default data defined
+*/
+
 test('visualEditor should have default data defined', t => {
-  	t.truthy(typeof visualEditor.data().name)
-  	t.truthy(typeof visualEditor.data().bgcolor)
-  	t.truthy(typeof visualEditor.data().width)
-  	t.truthy(typeof visualEditor.data().height)
-  	t.truthy(typeof visualEditor.data().radius)
-  	t.truthy(typeof visualEditor.data().newKey)
-  	t.truthy(typeof visualEditor.data().saved)
+	const partString = 'property should be defined';
+  	t.not(visualEditor.data().name, undefined, `name ${partString}`)
+  	t.not(visualEditor.data().bgcolor, undefined, `background color ${partString}`)
+  	t.not(visualEditor.data().width, undefined, `width ${partString}`)
+  	t.not(visualEditor.data().height, undefined, `height ${partString}`)
+  	t.not(visualEditor.data().radius, undefined, `border-radius ${partString}`)
+  	t.not(visualEditor.data().newKey, undefined, `newKey ${partString}`)
+  	t.not(visualEditor.data().saved, undefined, `saved ${partString}`)
 })
