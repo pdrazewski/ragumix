@@ -39,7 +39,7 @@
 				</div>
 			</form>
 		</div>
-		<div class="b-mainWrapper_secondary">
+		<div class="b-mainWrapper_secondary" id="output">
 			<div :style="rectStyle"></div>
 		</div>
 	</div>
@@ -88,12 +88,20 @@
 				}.bind(this));
 			},
 			save() {
+				var relativeWidth = this.width/document.getElementById('output').offsetWidth*100;
+				var relativeHeight =  this.height/document.getElementById('output').offsetHeight*100;
 				var data = {
 					key: this.newKey,
 					data: {
 						key: this.newKey,
 						name: this.name,
 						style: this.rectStyle,
+						computedStyle: {
+							width: relativeWidth > 100 ? 100 + "%" : relativeWidth + "%",
+							height:  relativeHeight > 100 ? 100 + "%" : relativeHeight + "%",
+							background: this.bgcolor,
+							"border-radius": this.radius + "px"
+						},
 						createdAt: firebaseConnect.helpers.created()
 					}
 				}

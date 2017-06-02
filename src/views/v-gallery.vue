@@ -11,13 +11,12 @@
 			<button @click="filterByRadiusDesc">sortuje radius 2</button>
 			<button @click="filterByDate">sortuje najstarsze </button>
 			<button @click="filterByDateDesc">sortuje najnowsze</button>
-			<transition-group name="flip-list" tag="ul">
-			<li v-bind:key="item" v-for="(item, index) in items" style="float: left; padding: 40px;border: 1px solid #eee">
-				<div :style="item.style">
-					{{item}}
-				</div>
+			<transition-group name="flip-list" tag="div" class="c-gallery">
+			<div v-bind:key="item" v-for="(item, index) in items" class="c-gallery_item">
+				{{item.name}}
+				<div :style="item.computedStyle"></div>
 				<a href="#" class="m-team_remove" @click.prevent="removeTeam(item.key)">Remove</a>
-			</li>
+			</div>
 			</transition-group>
 		</template>
 	</viewBase>
@@ -38,7 +37,7 @@
 			}
 		},
 		mounted(){
-			firebaseConnect.helpers.fetchDB('items', this)
+			firebaseConnect.helpers.fetchDB('items', this);
 		},
 		methods: {
 			removeTeam(key) {
