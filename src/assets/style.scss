@@ -13,7 +13,7 @@ html, body {
 body {
 	font-size: 16px;
 	font-family: $font-primary;  
-	line-height: 22px;
+	line-height: 22px; 
 	background: #fff;
 	a { 
 		font-size: 16px; 
@@ -48,6 +48,7 @@ body {
 //componenets
 @import "./components/_logo";
 @import "./components/_menu";
+@import "./components/_sort";
 
 //plugins
 @import "~vue-range-slider/dist/vue-range-slider.css"; 
